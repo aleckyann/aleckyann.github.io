@@ -1,6 +1,9 @@
 # slim3-medoo-api
 
-Estrutura de API REST super simples, pronta para uso.
+## ESTRUTURA DE API REST MUITO MUITO MUITO SIMPLES | API REST STRUCTURE VERY VERY SIMPLE.
 
-Slim framework 3
-Medoo
+### UTILIZANDO | USING :
+
+ Slimframework 3
+ medoo.in
+
