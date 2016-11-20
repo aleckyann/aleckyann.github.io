@@ -13,7 +13,7 @@ require __DIR__ . '/../src/dependencies.php';
 require __DIR__ . '/../src/middleware.php';
 
 // Rotas
-require __DIR__ . '/../src/routes.php';
+require __DIR__ . '/../src/controllers/index.php';
 
 // Rodar aplicação
 $app->run();

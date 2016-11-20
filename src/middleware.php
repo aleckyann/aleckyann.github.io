@@ -2,9 +2,9 @@
 // CADASTRAMENTO DE MIDDLEWARES
 
 $mw = function ($request, $response, $next) {
-    $response->getBody()->write('ANTES');
+    $response->getBody()->write('MIDDLEWARE ANTES');
     $response = $next($request, $response);
-    $response->getBody()->write('DEPOIS');
+    $response->getBody()->write('MIDDLEWARE DEPOIS');
     return $response;
 };
 
