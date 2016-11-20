@@ -4,10 +4,10 @@ require __DIR__. "/../models/usuarios.php";
 
 // CADASTRAMENTO DE ROTAS
 
-#DASHBOARD
-$app->get('/dashboard', function ($request, $response) {
-  return $this->view->render($response, 'dashboard.phtml');
-})->add($auth);
+#INDEX
+$app->get('/', function($request, $response){
+  return $this->view->render($response, 'index.phtml');
+});
 
 #LOGIN
 $app->get('/login', function ($request, $response) {
@@ -27,6 +27,12 @@ $app->post('/login/enter', function ($request, $response) {
     return $response->withRedirect('../login', 200);    
   }
 });
+
+#DASHBOARD
+$app->get('/dashboard', function ($request, $response) {
+  return $this->view->render($response, 'dashboard.phtml');
+})->add($auth);
+
 
 #LOGIN EXIT
 $app->get('/login/exit', function ($request, $response) {
