@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <form class="col-md-4 col-md-offset-4" method="post" action="login/enter">
+        <h2 align="center">LOGIN</h2>
+        <label for="email" class="sr-only">Email</label>
+        <input type="email" id="email" name="email" class="form-control text-center" placeholder="exemplo@exemplo.com" required autofocus>
+        <label for="senha" class="sr-only">Senha</label>
+        <input type="password" id="senha" name="senha" class="form-control text-center" placeholder="********" required>
+        <br>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Entrar</button>
+      </form>
+    </div>
+  </body>
+</html>

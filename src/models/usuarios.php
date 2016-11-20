@@ -1,5 +1,10 @@
 <?php
 
+function login($thisDbOfController, $email, $senha){
+    //$senha = sha1($senha);
+    return $thisDbOfController->select("usuarios", ["id", "email", "senha", "created"], ["AND" => ["email" => $email, "senha" => $senha] ]);
+};
+
 function getUsuarios($thisDbOfController){
      return $thisDbOfController->select("usuarios", ['email']);
 };

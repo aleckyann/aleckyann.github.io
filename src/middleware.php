@@ -1,12 +1,14 @@
 <?php
 // CADASTRAMENTO DE MIDDLEWARES
 
-$mw = function ($request, $response, $next) {
-    $response->getBody()->write('MIDDLEWARE ANTES');
-    $response = $next($request, $response);
-    $response->getBody()->write('MIDDLEWARE DEPOIS');
-    return $response;
-};
-
 # Use:
-#->add($mw)
+#->add($auth)
+
+$auth = function ($request, $response, $next) {
+    if($_SESSION['app']){
+        $response = $next($request, $response);
+        return $response;
+    } else {
+        return $response->withRedirect('../login', 200);    
+    }
+};
