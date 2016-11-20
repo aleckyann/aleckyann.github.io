@@ -6,9 +6,8 @@ require __DIR__. "/../models/usuarios.php";
 
 #render index.phtml
 $app->get('/', function ($request, $response) {
-  $data['csrf_inputs'] = csrf_inputs( $request->getAttribute('csrf_name'), $request->getAttribute('csrf_value') );
-  return $this->view->render($response, 'index.phtml', $data);
-})->add($container->get('csrf'))->add($mw);
+  return $this->view->render($response, 'index.phtml');
+})->add($mw);
 
 #get all users
 $app->get('/usuarios', function ($request, $response) {
