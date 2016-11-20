@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" ></script>
 </head>
 <body>
-    <h1>Welcome <?= 'var' ?></h1>
-    <h3><a href="login/exit">Sair</a></h3>
-    <hr>
-    <h6>Dados da sessão <b>app</b>:</h6>
-    <pre>
-    <?= print_r($_SESSION['app']) ?>
-    </pre>
+    <section class="container">
+        <h2>Welcome <?= $_SESSION['app']['email'] ?></h2>
+        <a class="btn btn-danger pull-right" href="login/exit">Sair</a>
+    </section>
+    <section class="container">
+        <h6>Dados da sessão <b>app</b>:</h6>
+        <pre>
+        <?= print_r($_SESSION['app']) ?>
+        </pre>
+    </section>
 </body>
 </html>
