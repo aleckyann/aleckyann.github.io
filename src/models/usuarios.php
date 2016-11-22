@@ -6,7 +6,7 @@ function login($thisDbOfController, $email, $senha){
 };
 
 function getUsuarios($thisDbOfController){
-     return $thisDbOfController->select("usuarios", ['email']);
+     return $thisDbOfController->select("usuarios", ['id', 'email']);
 };
 
 function getUsuario($thisDbOfController, $id){
@@ -22,6 +22,7 @@ function updateUsuario($thisDbOfController, $nova_senha, $email){
     return $thisDbOfController->update("usuarios", ["senha" => $nova_senha], ["email[=]" => $email]);
 };
 
-function deleteUsuario($thisDbOfController, $email, $senha){
-    return $thisDbOfController->delete("usuarios", [ "AND" => ["email" => $email, "senha" => $senha] ]);
+function deleteUsuario($thisDbOfController, $id){
+    return $thisDbOfController->delete("usuarios", ["id" => $id]);
 };
+

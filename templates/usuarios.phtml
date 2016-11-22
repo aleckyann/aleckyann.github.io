@@ -25,8 +25,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="dashboard">Dashboard </a></li>
-                <li class=""><a href="usuarios">Usuários </a></li>
+                <li class=""><a href="dashboard">Dashboard </a></li>
+                <li class="active"><a href="usuarios">Usuários </a></li>
                 
             </ul>
 
@@ -37,13 +37,22 @@
     </nav>
 
     <section class="container">
-        <h2>Welcome <?= $_SESSION['app']['email'] ?></h2>
-    </section>
-    <section class="container">
-        <h6>Dados da sessão <b>app</b>:</h6>
-        <pre>
-        <?= var_dump($_SESSION['app']) ?>
-        </pre>
+        <table class="table table-bordered">
+            <tr class="active">
+                <td><b>Email</b></td>
+                <td><b>Alterar</b></td>
+                <td><b>Remover</b></td>
+            </tr>
+            <?php foreach($data['usuarios'] as $usuario){ ?>
+
+                <tr>
+                    <td><?= $usuario['email'] ?></td>
+                    <td><a href="alterar/<?= $usuario['id'] ?>">Alterar</a></td>
+                    <td><a href="usuarios/excluir/<?= $usuario['id'] ?>">Excluir</a></td>
+                </tr>
+
+            <?php } ?>
+        </table>
     </section>
 </body>
-</html>
+</html>  

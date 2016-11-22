@@ -2,7 +2,8 @@
 
 #GET ALL USERS
 $app->get('/usuarios', function ($request, $response) {
-  return $response->withJson( getUsuarios($this->db) );
+  $data['usuarios'] = getUsuarios($this->db);
+  return $this->view->render($response, 'usuarios.phtml', $data);
 })->add($auth);
 
 #GET USER BY ID
@@ -28,9 +29,8 @@ $app->put('/usuarios', function ($request, $response) {
 })->add($auth);
 
 #DELETE USER
-$app->delete('/usuarios', function ($request, $response) {
-  $data['email'] = filter_email( $request->getParsedBody()['email'] );
-  $data['senha'] = filter_string( $request->getParsedBody()['senha'] );
-  $data['senha'] = hash('sha512', $data['senha']);
-  return deleteUsuario($this->db, $data['email'], $data['senha']);
+$app->get('/usuarios/excluir/{id}', function ($request, $response, $args) {
+  $data['id'] = filter_string( $args['id'] );
+  deleteUsuario($this->db, $data['id']);
+  return $response->withRedirect('../../usuarios', 200);    
 })->add($auth);
