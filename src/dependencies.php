@@ -24,3 +24,14 @@ $container['csrf'] = function ($c) {
 $container['flash'] = function () {
     return new \Slim\Flash\Messages();
 };
+
+
+// PAGE FOR ERROR
+//$container['notFoundHandler'] = function ($c) {
+//    return function ($request, $response) use ($c) {
+//        return $c['response']
+//            ->withStatus(404)
+//            ->withHeader('Content-Type', 'text/html')
+//            ->write('A página que você tentou acessar não existe. <a href=".">Voltar para página inicial</a>');
+//    };
+//};

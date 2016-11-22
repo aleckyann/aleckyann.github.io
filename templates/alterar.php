@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class=""><a href="dashboard">Dashboard </a></li>
-                <li class="active"><a href="usuarios">Usuários </a></li>
+                <li class=""><a href="usuarios">Usuários </a></li>
                 
             </ul>
 
@@ -35,24 +35,6 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-
-    <section class="container">
-        <table class="table table-bordered">
-            <tr class="active">
-                <td><b>Email</b></td>
-                <td><b>Alterar</b></td>
-                <td><b>Remover</b></td>
-            </tr>
-            <?php foreach($data['usuarios'] as $usuario){ ?>
-
-                <tr>
-                    <td><?= $usuario['email'] ?></td>
-                    <td><a href="usuarios/alterar/<?= $usuario['id'] ?>">Alterar</a></td>
-                    <td><a href="usuarios/excluir/<?= $usuario['id'] ?>">Excluir</a></td>
-                </tr>
-
-            <?php } ?>
-        </table>
-    </section>
-</body>
-</html>  
+        
+    </body>
+    </html>
