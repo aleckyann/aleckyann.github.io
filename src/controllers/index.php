@@ -11,7 +11,8 @@ $app->get('/', function($request, $response){
 
 #LOGIN
 $app->get('/login', function ($request, $response) {
-  return $this->view->render($response, 'login.phtml');  
+  $data['messages'] = $this->flash->getMessages();
+  return $this->view->render($response, 'login.phtml', $data['messages']);  
 });
 
 #LOGIN ENTER
@@ -24,6 +25,7 @@ $app->post('/login/enter', function ($request, $response) {
     $_SESSION['app'] = $data['resultado'][0];
     return $response->withRedirect('../dashboard', 200);
   } else {
+    $this->flash->addMessage('error', 'Login ou senha incorretos.');
     return $response->withRedirect('../login', 200);    
   }
 });

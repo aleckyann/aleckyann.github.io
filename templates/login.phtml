@@ -9,6 +9,14 @@
   </head>
   <body>
 
+  <?php if($data['error']){ ?>
+    <div class="container">
+      <div class="alert alert-danger col-md-4 col-md-offset-4">
+        <h3 align="center"><?= $data['error'][0] ?></h3>
+      </div>
+    </div>
+  <?php } ?>
+  
     <div class="container">
       <form class="col-md-4 col-md-offset-4" method="post" action="login/enter">
         <h2 align="center">LOGIN</h2>

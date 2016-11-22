@@ -19,3 +19,8 @@ $container['db'] = function ($c) {
 $container['csrf'] = function ($c) {
     return new \Slim\Csrf\Guard;
 };
+
+// FLASH MESSAGES
+$container['flash'] = function () {
+    return new \Slim\Flash\Messages();
+};
